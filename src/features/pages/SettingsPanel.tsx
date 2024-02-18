@@ -1,11 +1,9 @@
 import React, {FC} from 'react';
 import {InputSlider} from "../../common/components/Sliders/Slider";
+import {SettingsPropsType} from "../../types/types";
 
 
-export type SettingsPropsType ={
-  setChange:(change:number)=>void
-  block:string
-}
+
 const SettingsPanel:FC<SettingsPropsType> = ({setChange, block}) => {
   return (
     <div>

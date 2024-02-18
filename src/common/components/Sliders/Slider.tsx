@@ -6,13 +6,10 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import {baseTheme} from "../../styles/Them.styled";
 import {getItem, setItem} from "../../hooks/useLocalStorage";
+import {SliderPropsType} from "../../../types/types";
 
 
-export type SliderPropsType = {
-  setChange: (change: number) => void
-  title?: string
-  block: string
-}
+
 export const InputSlider: FC<SliderPropsType> = ({setChange, title, block}) => {
   const blockValue = getItem(block) || 0
   const min = block.slice(-1) === 'x' || block.slice(-1) === 'y' ? -100 : 0
