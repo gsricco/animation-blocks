@@ -34,6 +34,7 @@ const ContentPage: FC<PropsType>
     imgO:Number(getItem('img-o')),
     imgB:Number(getItem('img-b'))
   }
+  console.log(arrImg)
   let arrH = {
     hX: Number(getItem('h1-x')),
     hY: Number(getItem('h1-y')),
@@ -93,8 +94,10 @@ const WrapperContent = styled.div<PropsStyleType>`
         padding: 20px 0;
 
 
-        left: ${props => (props.arrH.hX ? `${props.arrH.hX - 51}px` : '0')};
-        top: ${props => (props.arrH.hY ? `${props.arrH.hY - 51}px` : '0')};
+        // left: ${props => (props.arrH.hX ? `${props.arrH.hX - 51}px` : 0)};
+        // top: ${props => (props.arrH.hY ? `${props.arrH.hY - 51}px` : 0)};
+        left: ${props => (props.arrH.hX ? `${props.arrH.hX}px` : 0)};
+        top: ${props => (props.arrH.hY ? `${props.arrH.hY}px` : 0)};
         opacity: ${props => (props.arrH.hO ? (1 - props.arrH.hO / 100) : 1)};
         filter: ${props => (props.arrH.hB ? `blur(${props.arrH.hB / 100}rem)` : `blur(0rem)`)};
     }
@@ -111,8 +114,10 @@ const WrapperContent = styled.div<PropsStyleType>`
         padding-right: 15px;
 
 
-        left: ${props => (props.arrP.pX ? `${(props.arrP.pX) - 51}px` : '0')};
-        top: ${props => (props.arrP.pY ? `${(props.arrP.pY) - 51}px` : '0')};
+        // left: ${props => (props.arrP.pX ? `${(props.arrP.pX) - 51}px` : '0')};
+        // top: ${props => (props.arrP.pY ? `${(props.arrP.pY) - 51}px` : '0')};
+        left: ${props => (props.arrP.pX ? `${(props.arrP.pX)}px` : '0')};
+        top: ${props => (props.arrP.pY ? `${(props.arrP.pY)}px` : '0')};
         opacity: ${props => (props.arrP.pO ? (1 - (props.arrP.pO) / 100) : 1)};
         filter: ${props => (props.arrP.pB ? `blur(${props.arrP.pB / 100}rem)` : `blur(0rem)`)};
     }
@@ -121,18 +126,21 @@ const WrapperContent = styled.div<PropsStyleType>`
         margin-top: 30px;
 
         position: relative;
+        // left: ${props => (props.arrBtn.btnX ? `${(props.arrBtn.btnX) - 51}px` : '0')};
+        // top: ${props => (props.arrBtn.btnY ? `${(props.arrBtn.btnY) - 51}px` : '0')};
 
-
-        left: ${props => (props.arrBtn.btnX ? `${(props.arrBtn.btnX) - 51}px` : '0')};
-        top: ${props => (props.arrBtn.btnY ? `${(props.arrBtn.btnY) - 51}px` : '0')};
+        left: ${props => (props.arrBtn.btnX ? `${(props.arrBtn.btnX)}px` : '0')};
+        top: ${props => (props.arrBtn.btnY ? `${(props.arrBtn.btnY)}px` : '0')};
         opacity: ${props => (props.arrBtn.btnO ? (1 - (props.arrBtn.btnO) / 100) : 1)};
         filter: ${props => (props.arrBtn.btnB ? `blur(${props.arrBtn.btnB / 100}rem)` : `blur(0rem)`)};
     }
 
     & img {
         position: relative;
-        left: ${props => (props.arrImg.imgX ? `${(props.arrImg.imgX) - 51}px` : '0')};
-        top: ${props => (props.arrImg.imgY ? `${(props.arrImg.imgY) - 51}px` : '0')};
+        // left: ${props => (props.arrImg.imgX ? `${(props.arrImg.imgX) - 51}px` : '0')};
+        // top: ${props => (props.arrImg.imgY ? `${(props.arrImg.imgY) - 51}px` : '0')};
+        left: ${props => (props.arrImg.imgX ? `${(props.arrImg.imgX)}px` : '0')};
+        top: ${props => (props.arrImg.imgY ? `${(props.arrImg.imgY)}px` : '0')};
         opacity: ${props => (props.arrImg.imgO ? (1 - (props.arrImg.imgO) / 100) : 1)};
         filter: ${props => (props.arrImg.imgB ? `blur(${props.arrImg.imgB / 100}rem)` : `blur(0rem)`)};
     }

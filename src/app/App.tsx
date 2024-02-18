@@ -6,6 +6,7 @@ import Page from "../features/pages/Page";
 
 
 function App() {
+
   return (
     <WrapperApp>
       <Main>

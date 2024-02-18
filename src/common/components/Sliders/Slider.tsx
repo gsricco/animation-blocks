@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -14,13 +14,13 @@ export type SliderPropsType = {
   block: string
 }
 export const InputSlider: FC<SliderPropsType> = ({setChange, title, block}) => {
-  const blockValue = getItem(block)
-  const [value, setValue] = useState(getItem(block));
-  const handleSliderChange = (event: Event, newValue: number | number[]) => {
-    setItem(block, newValue)
-    setValue(newValue as number);
-    setChange(newValue as number)
+  const blockValue = getItem(block) || 0
+  const min = block.slice(-1) === 'x' || block.slice(-1) === 'y' ? -100 : 0
 
+  const handleSliderChange = (event: Event, newValue: number | number[]) => {
+    if (newValue < -100) newValue = -100
+    setItem(block, newValue)
+    setChange(newValue as number)
   };
 
   return (
@@ -36,10 +36,12 @@ export const InputSlider: FC<SliderPropsType> = ({setChange, title, block}) => {
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
             size='small'
+            max={100}
+            min={min}
           />
         </Grid>
         <Grid item>
-          <Typography>{value}</Typography>
+          <Typography>{blockValue}</Typography>
         </Grid>
       </Grid>
     </Box>

@@ -11,15 +11,12 @@ export const useArrValuesBlock = (block: string) => {
 
   useEffect(() => {
     const localStorageValues: LocalStorageValues = {};
-    //   const localStorageValues: LocalStorageValues = {[`${block}X`]:0, [`${block}Y`]:0, [`${block}O`]:0, [`${block}B`]:0};
 
     keys.forEach(key => {
       let localStorageKey = `${block}-${key[key.length - 1].toLowerCase()}`;
       localStorageValues[key] = Number(localStorage.getItem(localStorageKey));
     });
     setValues(localStorageValues);
-    console.log('localStorageValues', localStorageValues)
   }, [block]);
-  console.log('val', values)
   return values;
 }

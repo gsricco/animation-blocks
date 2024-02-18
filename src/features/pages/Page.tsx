@@ -10,15 +10,13 @@ const Page = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_change, setChange] = useState(getItem(`${block}-y`))
 
-
-
   return (
     <WrapperPage>
       <StyledContent>
         <ContentPage setBlock={setBlock}/>
       </StyledContent>
       <StyledSettingsPanel>
-        <SettingsPanel setChange={setChange}  block={block}/>
+        <SettingsPanel setChange={setChange} block={block}/>
       </StyledSettingsPanel>
     </WrapperPage>
   );
