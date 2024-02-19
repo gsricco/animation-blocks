@@ -47,8 +47,8 @@ export const BaseModal = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <IconButton onClick={handleClose}>
-              <CloseIcon style={{position:'absolute', top:'-30px', left:'1120px', cursor:'pointer', color:'white'}}/>
+            <IconButton onClick={handleClose} style={{position:'relative', top:'-30px', left:'100%', cursor:'pointer', color:'white'}}>
+              <CloseIcon />
             </IconButton>
             <StyledPreview>
               <ContentPage />
