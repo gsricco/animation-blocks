@@ -3,9 +3,9 @@ import {BaseButtonPropsType, StyledButtonPropsType} from "../../types/types";
 import styled from "styled-components";
 import {baseTheme} from "../styles/Them.styled";
 
-const BaseButton: FC<BaseButtonPropsType> = ({title,color, width, height, ...otherProps}) => {
+const BaseButton: FC<BaseButtonPropsType> = ({title,color, width, height, onClick, ...otherProps}) => {
   return (
-    <StyledButton color={color} width={width} height={height}>{title}</StyledButton>
+    <StyledButton color={color} width={width} height={height} onClick={onClick}>{title}</StyledButton>
   );
 };
 
@@ -27,4 +27,12 @@ const StyledButton = styled.button.attrs(props=>({type:props.type? props.type:'b
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
+    &:hover{
+        background:${props => (props.color ? props.color : `${baseTheme.colors.button.hover}`)};
+    }
+    &:active{
+        background:${props => (props.color ? props.color : `${baseTheme.colors.button.active}`)};
+    }
+    
 `

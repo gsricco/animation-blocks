@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ContentPage from "../contentPage/ContentPage";
-import SettingsPanel from "../SettingsPanel";
+import SettingsPanel from "../settings/SettingsPanel";
 import {getItem} from "../../../common/hooks/useLocalStorage";
 import {StyledContent, StyledSettingsPanel, WrapperPage} from "./Page.styled";
 

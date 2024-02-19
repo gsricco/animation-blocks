@@ -22,7 +22,9 @@ const ContentPage: FC<PropsType>
 
   const handler = (event: React.MouseEvent<HTMLElement>) => {
     setItem('block', event.currentTarget.id)
-    setBlock(event.currentTarget.id)
+    if (setBlock) {
+      setBlock(event.currentTarget.id)
+    }
     const el = document.getElementById(event.currentTarget.id)
     if (el) el.style.border = `2px dashed red`
 

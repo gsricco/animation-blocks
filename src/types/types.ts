@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, ReactNode} from "react";
+import React, {ButtonHTMLAttributes, ReactNode} from "react";
 
 export type MainPropsType = {
   children: ReactNode
@@ -16,6 +16,7 @@ export type StyledButtonPropsType = {
   height?: string
   type?: 'button' | 'reset' | 'submit'
   width?: string
+  onClick?:(e:React.MouseEvent<HTMLButtonElement>)=>void
 }
 
 //Slider.tsx
@@ -30,7 +31,7 @@ export type SettingsPropsType ={
 }
 
 export type PropsType = {
-  setBlock: (block: string) => void
+  setBlock?: (block: string) => void
 }
 
 export type PropsStyleType = {

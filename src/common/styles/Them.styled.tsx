@@ -17,7 +17,8 @@ export const baseTheme = {
     },
     button:{
       primary:'#3E87F8',
-      active:'#70B2FF'
+      active:'#70B2FF',
+      hover:'#1d4480'
     },
   }
 }

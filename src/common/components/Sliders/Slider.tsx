@@ -9,10 +9,10 @@ import {getItem, setItem} from "../../hooks/useLocalStorage";
 import {SliderPropsType} from "../../../types/types";
 
 
-
 export const InputSlider: FC<SliderPropsType> = ({setChange, title, block}) => {
   const blockValue = getItem(block) || 0
-  const min = block.slice(-1) === 'x' || block.slice(-1) === 'y' ? -100 : 0
+  const scale = block.slice(-1) === 'x' || block.slice(-1) === 'y'
+  const min = scale ? -100 : 0
 
   const handleSliderChange = (event: Event, newValue: number | number[]) => {
     if (newValue < -100) newValue = -100
@@ -38,7 +38,7 @@ export const InputSlider: FC<SliderPropsType> = ({setChange, title, block}) => {
           />
         </Grid>
         <Grid item>
-          <Typography>{blockValue}</Typography>
+          <Typography>{scale ? blockValue : (blockValue / 100).toFixed(1)}</Typography>
         </Grid>
       </Grid>
     </Box>

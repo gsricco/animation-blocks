@@ -11,7 +11,7 @@ export const WrapperContent = styled.div<PropsStyleType>`
         font-family: Inter, sans-serif;
         font-size: 43px;
         font-weight: 700;
-        line-height: 52.04px;
+        line-height: 52px;
         letter-spacing: -2px;
         padding: 20px 4px;
 
@@ -27,7 +27,7 @@ export const WrapperContent = styled.div<PropsStyleType>`
         font-family: Inter, sans-serif;
         font-size: 15px;
         font-weight: 400;
-        line-height: 22.05px;
+        line-height: 22px;
         letter-spacing: 0;
         padding: 4px 15px 4px 4px;
 
